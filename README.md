@@ -58,7 +58,7 @@ When time's up, the keyboard comes back on its own and tells you how many keys y
 
 ## Quick start
 
-You need Python 3.9 or newer. No `pip install`, no dependencies: it's one file and only uses the standard library.
+You need Python 3.9 or newer, and that's it: no dependencies, nothing else to install. It's a single file that only uses Python's standard library, so you can download it and run it right away. (If you'd rather have a `keyboard-freezer` command, there's an optional install at the end of this section.)
 
 **Windows (PowerShell):**
 
@@ -87,7 +87,7 @@ sudo python3 keyboard_freezer.py
 
 `sudo` lets it grab the keyboard at the device level, which works everywhere: X11, Wayland, even the text console. If you're in the `input` group you don't need `sudo`. On an X11 desktop it also works without `sudo`, using an X11 keyboard grab instead.
 
-**As a command, on any OS:**
+**Optional: install it as a command (any OS):**
 
 ```bash
 pip install git+https://github.com/aamirovich/keyboard-freezer
