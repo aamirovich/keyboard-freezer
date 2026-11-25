@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "keyboard-freezer"
+dynamic = ["version"]
+description = "Freeze your keyboard for 5 minutes so you can clean it, without stopping the AI agent that is coding for you."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "aamirovich" }]
+keywords = ["keyboard", "lock", "cleaning", "ai-agent", "claude-code"]
+classifiers = [
+    "Environment :: Console",
+    "Operating System :: Microsoft :: Windows",
+    "Operating System :: MacOS",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3",
+]
+
+[project.urls]
+Homepage = "https://github.com/aamirovich/keyboard-freezer"
+
+[project.scripts]
+keyboard-freezer = "keyboard_freezer:main"
+
+[tool.setuptools]
+py-modules = ["keyboard_freezer"]
+
+[tool.setuptools.dynamic]
+version = { attr = "keyboard_freezer.__version__" }
