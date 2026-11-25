@@ -131,17 +131,15 @@ A few details that matter more than they sound:
 
 ## Platform support
 
-Every push runs real freezes in [CI](https://github.com/aamirovich/keyboard-freezer/actions/workflows/ci.yml): it injects key presses while the keyboard is frozen and checks they were swallowed.
+Every push runs real freezes on Windows, macOS and Linux in [CI](https://github.com/aamirovich/keyboard-freezer/actions/workflows/ci.yml): it presses keys while the keyboard is frozen and checks they were swallowed.
 
-| Platform | Status | How it's verified |
+| Platform | Status | Notes |
 | --- | --- | --- |
-| Windows 10 / 11 | ✅ Works | On a real Windows 11 machine and in CI: injected keys blocked during the freeze, delivered again after. |
-| macOS | ✅ Works (after you allow Accessibility) | In CI on GitHub's macOS runner: 3 posted key presses swallowed. Not yet tried by hand on a physical Mac. |
-| Linux with `sudo` (X11, Wayland, console) | ✅ Works | In CI with a virtual keyboard: keys swallowed, a second reader saw nothing during the freeze, keys flowed again after. |
-| Linux X11 without `sudo` | ✅ Works | In CI under Xvfb: 3 `xdotool` key presses swallowed. |
+| Windows 10 / 11 | ✅ Works | Keys are blocked during the freeze and come back right after. |
+| macOS | ✅ Works | Allow Accessibility for your terminal app the first time. |
+| Linux with `sudo` (X11, Wayland, console) | ✅ Works | Grabs every keyboard at the device level. |
+| Linux X11 without `sudo` | ✅ Works | Uses an X11 keyboard grab instead. |
 | Linux Wayland without `sudo` | ❌ Needs `sudo` or the `input` group | Wayland doesn't let normal apps grab the keyboard. The freezer tells you exactly that. |
-
-Python 3.9+ (3.9 is checked on Windows; 3.10 and 3.13 on macOS; 3.13 on Linux).
 
 Found a setup where it doesn't work? [Open an issue](https://github.com/aamirovich/keyboard-freezer/issues). Bonus points for a photo of the keyboard.
 
