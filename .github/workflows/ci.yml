@@ -67,7 +67,7 @@ jobs:
       - run: sudo "$(which python)" tests/smoke_evdev.py
 
   macos-tap:
-    name: macOS - event tap or permission message
+    name: macOS - keys blocked for real (or permission message)
     runs-on: macos-latest
     timeout-minutes: 5
     steps:
