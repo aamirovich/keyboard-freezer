@@ -94,8 +94,6 @@ pip install git+https://github.com/aamirovich/keyboard-freezer
 keyboard-freezer
 ```
 
-(`pipx install git+https://...` or `uvx --from git+https://... keyboard-freezer` work too.)
-
 ## Usage
 
 ```bash
@@ -160,6 +158,9 @@ A tiny unsigned program that hooks your keyboard looks exactly like malware to e
 
 **Will it stop my AI agent?**
 No. It only eats keyboard input. Every program keeps running, including the agent, its terminal, and your music.
+
+**My agent runs in an Administrator terminal on Windows. Does that matter?**
+Probably, yes. Windows keeps normal programs from interfering with Administrator windows, and that most likely includes this hook. If your agent's terminal runs as Administrator, start the freezer from an Administrator terminal too.
 
 **My laptop's brightness and volume keys still work during the freeze.**
 Some laptops handle `Fn` key combos in firmware, before the operating system sees them. Nothing a normal program can do about that. Wipe gently.
